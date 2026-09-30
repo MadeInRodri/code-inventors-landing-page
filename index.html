@@ -1,0 +1,1375 @@
+<!doctype html>
+
+<html class="dark" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link rel="icon" href="./src/assets/logo-rounded.png" type="image/png" />
+    <title>Code Inventors</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          scroll-behavior: smooth;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#006c49",
+              tertiary: "#ddb7ff",
+              "inverse-surface": "#dfe2eb",
+              background: "#10141a",
+              "secondary-fixed": "#c4e7ff",
+              "tertiary-container": "#c487ff",
+              "on-error": "#690005",
+              "primary-fixed": "#6ffbbe",
+              "tertiary-fixed-dim": "#ddb7ff",
+              outline: "#86948a",
+              "surface-container-low": "#181c22",
+              "on-tertiary-container": "#550093",
+              "outline-variant": "#3c4a42",
+              "surface-dim": "#10141a",
+              "surface-container-high": "#262a31",
+              "on-primary-container": "#00422b",
+              "surface-container-highest": "#31353c",
+              "on-primary": "#003824",
+              "on-secondary": "#00354a",
+              "on-primary-fixed-variant": "#005236",
+              "inverse-on-surface": "#2d3137",
+              "on-secondary-fixed": "#001e2c",
+              secondary: "#7bd0ff",
+              "surface-tint": "#4edea3",
+              "tertiary-fixed": "#f0dbff",
+              "surface-bright": "#353940",
+              "on-surface-variant": "#bbcabf",
+              "secondary-fixed-dim": "#7bd0ff",
+              "primary-fixed-dim": "#4edea3",
+              "primary-container": "#10b981",
+              "on-tertiary-fixed": "#2c0051",
+              primary: "#4edea3",
+              "on-secondary-fixed-variant": "#004c69",
+              "error-container": "#93000a",
+              "surface-container": "#1c2026",
+              "on-tertiary": "#490080",
+              "on-surface": "#dfe2eb",
+              "secondary-container": "#00a6e0",
+              "surface-container-lowest": "#0a0e14",
+              error: "#ffb4ab",
+              surface: "#10141a",
+              "on-primary-fixed": "#002113",
+              "on-secondary-container": "#00374d",
+              "surface-variant": "#31353c",
+              "on-background": "#dfe2eb",
+              "on-tertiary-fixed-variant": "#6900b3",
+              "on-error-container": "#ffdad6",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "space-xs": "0.25rem",
+              "gutter-sm": "0.75rem",
+              margin: "1.5rem",
+              "space-md": "1rem",
+              gutter: "1rem",
+              "gutter-lg": "1.5rem",
+              "space-sm": "0.5rem",
+              "space-xl": "2rem",
+              "margin-lg": "2rem",
+              "margin-sm": "1rem",
+              "space-lg": "1.5rem",
+            },
+            fontFamily: {
+              display: ["Inter"],
+              "headline-md": ["Inter"],
+              "headline-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "code-sm": ["JetBrains Mono"],
+              "label-sm": ["JetBrains Mono"],
+              "code-lg": ["JetBrains Mono"],
+              "label-md": ["JetBrains Mono"],
+              "body-lg": ["Inter"],
+              "code-md": ["JetBrains Mono"],
+              "headline-sm": ["Inter"],
+              "body-sm": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+            },
+            fontSize: {
+              display: [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+              "code-sm": ["11px", { lineHeight: "16px", fontWeight: "400" }],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.04em",
+                  fontWeight: "500",
+                },
+              ],
+              "code-lg": ["14px", { lineHeight: "22px", fontWeight: "500" }],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "code-md": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+              "headline-sm": [
+                "18px",
+                {
+                  lineHeight: "26px",
+                  letterSpacing: "-0.005em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "26px",
+                {
+                  lineHeight: "32px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body-md text-on-surface antialiased">
+    <header
+      class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-xl border-b border-outline-variant/40"
+    >
+      <div
+        class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between"
+      >
+        <div class="flex items-center gap-space-sm">
+          <img
+            alt="Code Inventors Hexagon Logo"
+            class="h-8 w-auto object-contain"
+            src="./src/assets/logo-rounded.png"
+          /><span
+            class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-semibold"
+            >Code Inventors</span
+          >
+        </div>
+        <div class="flex items-center gap-gutter-lg">
+          <nav
+            class="hidden md:flex items-center gap-gutter"
+            data-active-classes="text-primary font-body-md"
+          >
+            <a
+              aria-current="page"
+              class="transition-colors text-primary font-body-md"
+              data-path="landing-page"
+              href="#beneficios"
+              >Beneficios</a
+            ><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="aspectos-tecnicos"
+              href="#tecnicos"
+              >Aspectos Técnicos</a
+            ><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="equipo"
+              href="#equipo"
+              >Equipo</a
+            >
+          </nav>
+          <div class="flex items-center gap-space-sm">
+            <a
+              class="hidden sm:inline-flex items-center justify-center rounded-lg border border-primary text-primary hover:bg-primary-container/20 hover:text-on-surface px-space-md py-1.5 font-label-md text-label-md transition-colors"
+              href="#descargar"
+              >Explorar</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-16 bg-surface">
+      <div class="flex flex-col w-full text-on-surface">
+        <!-- HERO SECTION -->
+        <section
+          class="relative w-full overflow-hidden px-margin py-space-xl lg:py-24 bg-surface"
+        >
+          <!-- Ambient glow behind phone & hero -->
+          <div
+            class="absolute top-1/4 right-5 w-72 h-72 md:w-96 md:h-96 rounded-full bg-primary-container/15 blur-3xl pointer-events-none"
+          ></div>
+          <div
+            class="absolute -top-10 left-10 w-64 h-64 rounded-full bg-secondary/10 blur-3xl pointer-events-none"
+          ></div>
+          <div
+            class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center relative z-10"
+          >
+            <!-- Left Column: Copy & Actions -->
+            <div class="lg:col-span-7 flex flex-col items-start gap-space-md">
+              <!-- Live Pill Badge -->
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/10 border border-primary/30 font-code-sm text-code-sm text-primary"
+              >
+                <span class="relative flex h-2 w-2">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+                  ></span>
+                  <span
+                    class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+                  ></span>
+                </span>
+                <span>Plataforma impulsada por IA • Gemini 1.5 Flash</span>
+              </div>
+              <!-- Main Headline -->
+              <h1
+                class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-on-surface leading-tight"
+              >
+                Aprende a programar con
+                <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
+                  >Code Inventors</span
+                >
+              </h1>
+              <!-- Subtitle -->
+              <p
+                class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed"
+              >
+                Domina el desarrollo de software con test generados por IA en
+                tiempo real que te ayudarán a reforzar tus áreas débiles.
+              </p>
+              <!-- CTA Buttons Group -->
+              <div
+                class="flex flex-wrap items-center gap-space-sm sm:gap-gutter pt-space-xs w-full sm:w-auto"
+              >
+                <a
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-semibold px-space-xl py-3.5 rounded-lg shadow-lg shadow-primary/20 transition-all"
+                  href="#descargar"
+                >
+                  <span>Explorar proyecto</span>
+                  <span class="material-symbols-outlined text-[20px]"
+                    >arrow_forward</span
+                  >
+                </a>
+                <div class="relative group w-full sm:w-auto">
+                  <a
+                    href="https://github.com/MadeInRodri/learning-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-auto"
+                  >
+                    <button
+                      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-surface-container-high border border-outline-variant hover:border-outline text-on-surface px-space-lg py-3.5 rounded-lg font-code-md text-code-md transition-all"
+                      id="copyGitBtn"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[18px] text-on-surface-variant"
+                        >terminal</span
+                      >
+                      <span id="copyHint">git clone code-inventors</span>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <!-- Metric strip / Social proof -->
+              <div
+                class="grid grid-cols-3 gap-space-md pt-space-lg mt-space-sm border-t border-outline-variant/30 w-full max-w-xl"
+              ></div>
+            </div>
+            <!-- Right Column: Mobile Phone Mockup -->
+            <div
+              class="lg:col-span-5 flex flex-col items-center justify-center relative mt-space-lg lg:mt-0"
+            >
+              <div
+                class="relative w-full max-w-sm sm:max-w-md flex flex-col items-center"
+              >
+                <!-- Floating Status Badge -->
+                <div
+                  class="absolute -top-4 -left-2 sm:left-4 z-20 bg-surface-container-highest/95 backdrop-blur-md border border-outline-variant px-3 py-1.5 rounded-full flex items-center gap-2 shadow-xl"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-primary animate-pulse"
+                  ></span>
+                  <span class="font-label-sm text-label-sm text-on-surface"
+                    >📱 Vista previa: App Móvil iOS &amp; Android</span
+                  >
+                </div>
+                <!-- Phone container with realistic screen styling -->
+                <div
+                  class="relative z-10 w-64 sm:w-72 md:w-80 rounded-[2.5rem] p-2 bg-surface-container-high border-2 border-outline-variant/60 shadow-2xl shadow-surface-container-lowest"
+                >
+                  <div
+                    class="overflow-hidden rounded-[2.2rem] bg-surface-container-lowest relative aspect-[9/19] flex items-center justify-center"
+                  >
+                    <img
+                      alt="Code Inventors mobile preview"
+                      class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                      src="./src/assets/code-inventors-test.png"
+                    />
+                  </div>
+                </div>
+                <!-- Bottom floating terminal pill -->
+                <div
+                  class="absolute -bottom-4 -right-2 sm:right-2 z-20 bg-surface-container-high/95 backdrop-blur-md border border-outline-variant px-3.5 py-2 rounded-xl flex items-center gap-2.5 shadow-xl"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[20px]"
+                    >bolt</span
+                  >
+                  <div class="flex flex-col">
+                    <span
+                      class="font-code-sm text-[10px] text-on-surface-variant leading-none"
+                      >TEST GENERADOS EN SEGUNDOS</span
+                    >
+                    <span
+                      class="font-code-md text-code-md text-primary font-semibold"
+                      >Gemini 1.5 Flash</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- BENEFITS SECTION -->
+        <section
+          class="w-full px-margin py-space-xl lg:py-24 bg-surface-container-lowest border-t border-outline-variant/30"
+          id="beneficios"
+        >
+          <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+            <!-- Section Header -->
+            <div class="flex flex-col items-start gap-space-xs max-w-3xl">
+              <span
+                class="font-label-md text-label-md text-primary tracking-wider uppercase"
+                >POR QUÉ ELEGIRNOS</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-on-surface"
+              >
+                Beneficios de Code Inventors
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Diseñado por programadores para programadores. Una experiencia
+                de aprendizaje inmersiva, interactiva y de alto rendimiento.
+              </p>
+            </div>
+            <!-- 4 Cards Grid -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-lg"
+            >
+              <!-- Card 1 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/60 hover:border-primary/50 transition-all duration-300 rounded-xl p-space-lg flex flex-col justify-between group shadow-sm"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[28px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >psychology</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                    >
+                      Quizes IA
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Pruebas generadas a tu medida para reforzar tus erroers,
+                      respaldadas por la API de Gemini.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/20 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-primary bg-primary-container/10 px-2 py-0.5 rounded"
+                    >latency: ~180ms</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-outline-variant text-[18px]"
+                    >verified</span
+                  >
+                </div>
+              </div>
+              <!-- Card 2 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/60 hover:border-primary/50 transition-all duration-300 rounded-xl p-space-lg flex flex-col justify-between group shadow-sm"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[28px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >alt_route</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                    >
+                      Rutas Interactivas
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Cursos que se actualizan para ofrecer la información más
+                      nueva según el mercado y las nuevas tecnologías.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/20 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-secondary bg-secondary-container/10 px-2 py-0.5 rounded"
+                    >tailored: 100%</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-outline-variant text-[18px]"
+                    >explore</span
+                  >
+                </div>
+              </div>
+              <!-- Card 3 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/60 hover:border-primary/50 transition-all duration-300 rounded-xl p-space-lg flex flex-col justify-between group shadow-sm"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[28px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >military_tech</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                    >
+                      Gamificación Dev
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Usa energía, gana experiencia y sube de nivel gracias a la
+                      experiencia gamificada inmersiva de la aplicación, compite
+                      por ser el mejor.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/20 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-tertiary bg-tertiary-container/10 px-2 py-0.5 rounded"
+                    >streak: daily</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-outline-variant text-[18px]"
+                    >leaderboard</span
+                  >
+                </div>
+              </div>
+              <!-- Card 4 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/60 hover:border-primary/50 transition-all duration-300 rounded-xl p-space-lg flex flex-col justify-between group shadow-sm"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <div
+                    class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-110 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[28px]"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >terminal</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-space-xs">
+                    <h3
+                      class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                    >
+                      Entorno en la Nube
+                    </h3>
+                    <p
+                      class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed"
+                    >
+                      Recibe los nuevos cursos y lecciones sin un instante de
+                      retraso gracias a la integración con FireStore, una base
+                      de datos en la nube.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/20 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-primary bg-primary-container/10 px-2 py-0.5 rounded"
+                    >runtime: instant</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-outline-variant text-[18px]"
+                    >cloud_done</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- TECHNICAL ASPECTS SECTION (For Nerds) -->
+        <section
+          class="w-full px-margin py-space-xl lg:py-24 bg-surface"
+          id="tecnicos"
+        >
+          <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+            <!-- Section Header -->
+            <div class="flex flex-col items-start gap-space-xs max-w-3xl">
+              <span class="font-code-md text-code-md text-primary"
+                >&gt;_ ARCHITECTURE_OVERVIEW</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-on-surface font-code-lg"
+              >
+                Aspectos Técnicos
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Arquitectura escalable, reactiva y moderna construida bajo
+                rigurosos estándares de ingeniería de software.
+              </p>
+            </div>
+            <!-- VS Code / Terminal Styled Container -->
+            <div
+              class="w-full rounded-xl overflow-hidden bg-surface-container-lowest border border-outline-variant shadow-2xl"
+            >
+              <!-- Terminal Window Titlebar -->
+              <div
+                class="h-10 bg-surface-container-low px-space-md flex items-center justify-between border-b border-outline-variant/40"
+              >
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-error"></div>
+                  <div
+                    class="w-3 h-3 rounded-full bg-secondary-fixed-dim"
+                  ></div>
+                  <div class="w-3 h-3 rounded-full bg-primary"></div>
+                  <span
+                    class="ml-2 font-code-sm text-code-sm text-on-surface-variant"
+                    >architecture.terminal — stack-config.json</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-3 font-code-sm text-code-sm text-outline"
+                >
+                  <span class="hidden sm:inline">UTF-8</span>
+                  <span>JSON</span>
+                </div>
+              </div>
+              <!-- Terminal Body / Table -->
+              <div class="overflow-x-auto">
+                <table
+                  class="w-full text-left font-code-md text-code-md border-collapse"
+                >
+                  <thead>
+                    <tr
+                      class="border-b border-outline-variant/40 bg-surface-container-high/40 text-on-surface-variant font-label-md text-label-md uppercase"
+                    >
+                      <th class="py-3 px-space-md">Capa / Subsistema</th>
+                      <th class="py-3 px-space-md">Tecnología Base</th>
+                      <th class="py-3 px-space-md hidden sm:table-cell">
+                        Especificación &amp; Rol
+                      </th>
+                      <th class="py-3 px-space-md text-right">Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-outline-variant/20">
+                    <!-- Row 1 -->
+                    <tr
+                      class="hover:bg-surface-container-high/30 transition-colors"
+                    >
+                      <td class="py-4 px-space-md font-medium text-secondary">
+                        <div class="flex items-center gap-2">
+                          <span class="material-symbols-outlined text-[16px]"
+                            >devices</span
+                          >
+                          <span>Frontend</span>
+                        </div>
+                      </td>
+                      <td
+                        class="py-4 px-space-md text-on-surface font-semibold"
+                      >
+                        React Native &amp; NativeWind
+                      </td>
+                      <td
+                        class="py-4 px-space-md text-on-surface-variant hidden sm:table-cell"
+                      >
+                        Interfaz nativa móvil fluida y responsiva
+                        multiplataforma con micro-animaciones fluidas.
+                      </td>
+                      <td class="py-4 px-space-md text-right">
+                        <span
+                          class="inline-flex items-center px-2 py-0.5 rounded font-code-sm text-code-sm bg-primary-container/15 text-primary border border-primary/30"
+                          >v0.74 (Active)</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr
+                      class="hover:bg-surface-container-high/30 transition-colors"
+                    >
+                      <td class="py-4 px-space-md font-medium text-primary">
+                        <div class="flex items-center gap-2">
+                          <span class="material-symbols-outlined text-[16px]"
+                            >dns</span
+                          >
+                          <span>Backend</span>
+                        </div>
+                      </td>
+                      <td
+                        class="py-4 px-space-md text-on-surface font-semibold"
+                      >
+                        NodeJs &amp; MySQL
+                      </td>
+                      <td
+                        class="py-4 px-space-md text-on-surface-variant hidden sm:table-cell"
+                      >
+                        API RESTful robusta, autenticación Sanctum segura y base
+                        de datos relacional optimizada.
+                      </td>
+                      <td class="py-4 px-space-md text-right">
+                        <span
+                          class="inline-flex items-center px-2 py-0.5 rounded font-code-sm text-code-sm bg-secondary/15 text-secondary border border-secondary/30"
+                          >v11.x (Optimized)</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr
+                      class="hover:bg-surface-container-high/30 transition-colors"
+                    >
+                      <td class="py-4 px-space-md font-medium text-tertiary">
+                        <div class="flex items-center gap-2">
+                          <span class="material-symbols-outlined text-[16px]"
+                            >sync</span
+                          >
+                          <span>Content &amp; Realtime</span>
+                        </div>
+                      </td>
+                      <td
+                        class="py-4 px-space-md text-on-surface font-semibold"
+                      >
+                        Firebase (Firestore)
+                      </td>
+                      <td
+                        class="py-4 px-space-md text-on-surface-variant hidden sm:table-cell"
+                      >
+                        Sincronización en tiempo real de progresos, estados de
+                        sesión y almacenamiento distribuido.
+                      </td>
+                      <td class="py-4 px-space-md text-right">
+                        <span
+                          class="inline-flex items-center px-2 py-0.5 rounded font-code-sm text-code-sm bg-tertiary-container/15 text-tertiary border border-tertiary/30"
+                          >v10.x (Synced)</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr
+                      class="hover:bg-surface-container-high/30 transition-colors"
+                    >
+                      <td
+                        class="py-4 px-space-md font-medium text-primary-fixed"
+                      >
+                        <div class="flex items-center gap-2">
+                          <span class="material-symbols-outlined text-[16px]"
+                            >auto_awesome</span
+                          >
+                          <span>Artificial Intelligence</span>
+                        </div>
+                      </td>
+                      <td
+                        class="py-4 px-space-md text-on-surface font-semibold"
+                      >
+                        Gemini API (Google Cloud)
+                      </td>
+                      <td
+                        class="py-4 px-space-md text-on-surface-variant hidden sm:table-cell"
+                      >
+                        Modelos multimodales para evaluación estática de código,
+                        depuración contextual y tutoría adaptativa.
+                      </td>
+                      <td class="py-4 px-space-md text-right">
+                        <span
+                          class="inline-flex items-center px-2 py-0.5 rounded font-code-sm text-code-sm bg-primary-container/20 text-primary border border-primary/40 font-bold"
+                          >1.5 Flash (Ultra-fast)</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Simulated Bottom Terminal Output -->
+              <div
+                class="bg-surface-container-low/90 p-space-md border-t border-outline-variant/40 flex flex-col gap-1 font-code-sm text-code-sm"
+              >
+                <div class="flex items-center gap-2 text-on-surface-variant">
+                  <span class="text-primary font-bold">$</span>
+                  <span>ping -c 3 api.codeinventors.dev</span>
+                </div>
+                <p class="text-outline pl-4 font-mono text-[11px]">
+                  64 bytes from 104.21.34.12: icmp_seq=1 ttl=64 time=14.2 ms •
+                  status: 200 OK • latency_health: optimum
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- TEAM SECTION -->
+        <section
+          class="w-full px-margin py-space-xl lg:py-24 bg-surface-container-lowest border-t border-outline-variant/30"
+          id="equipo"
+        >
+          <div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
+            <!-- Section Header -->
+            <div class="flex flex-col items-start gap-space-xs max-w-3xl">
+              <span class="font-label-md text-label-md text-primary uppercase"
+                >TALENTO Y PASIÓN</span
+              >
+              <h2
+                class="font-headline-lg text-headline-lg font-bold text-on-surface"
+              >
+                Conoce a los inventores
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Los ingenieros detrás de la plataforma que está redefiniendo
+                cómo se aprende a programar en Latinoamérica.
+              </p>
+            </div>
+            <!-- 3 Developer Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-lg">
+              <!-- Member 1 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/50 hover:border-primary/40 transition-all rounded-xl p-space-lg flex flex-col justify-between group"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Card Header -->
+                  <div class="flex items-start justify-between">
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors"
+                      >
+                        Rodrigo Mejía
+                      </h3>
+                      <span
+                        class="font-code-md text-code-md text-secondary font-medium"
+                        >Frontend &amp; Mobile Lead</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                        >React Native &amp; UI/UX Systems</span
+                      >
+                    </div>
+                    <div
+                      class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface-variant"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >terminal</span
+                      >
+                    </div>
+                  </div>
+                  <!-- QR Code Placeholder Frame -->
+                  <div
+                    class="relative bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-space-md flex flex-col items-center justify-center my-space-xs"
+                  >
+                    <div
+                      class="w-40 h-40 overflow-hidden rounded bg-surface-container p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
+                    >
+                      <img
+                        alt="QR Code LinkedIn Alejandro Silva"
+                        class="w-full h-full object-contain"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1Xt50TvOLULTy--K0A_G-7PgKL1MyPJI5DdJCakpxZsCUcAddNEdumiHY22T0TNaVF7xjabnjOoX1BGTnKwsnIFXH1LjlXEdFmhlhg29wALEz-XKSb1fw36xA2K8bLLbrQbSfQp_GDoBNyKiDoy1JH_8_0plXURbsFNVC05o95kKDAPuB-l__tH6ndXIyPZzDxHyC48P1SqR5xOkP7EZ5r5572QAkWkr6-Y72tRZuwkO7HkU0YWeBD3Raw"
+                      />
+                    </div>
+                    <span
+                      class="font-code-sm text-code-sm text-on-surface-variant mt-space-sm flex items-center gap-1.5"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px] text-primary"
+                        >qr_code_scanner</span
+                      >
+                      Escanear para conectar en LinkedIn
+                    </span>
+                  </div>
+                </div>
+                <!-- Card Footer -->
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/30 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-on-surface-variant"
+                    >@asilva-dev</span
+                  >
+                  <div class="flex items-center gap-1.5">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >React Native</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >Tailwind</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Member 2 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/50 hover:border-primary/40 transition-all rounded-xl p-space-lg flex flex-col justify-between group"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Card Header -->
+                  <div class="flex items-start justify-between">
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors"
+                      >
+                        Bryan Fuentes
+                      </h3>
+                      <span
+                        class="font-code-md text-code-md text-primary font-medium"
+                        >Backend &amp; Systems Architect</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                        >Laravel, Microservicios &amp; MySQL</span
+                      >
+                    </div>
+                    <div
+                      class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface-variant"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >database</span
+                      >
+                    </div>
+                  </div>
+                  <!-- QR Code Placeholder Frame -->
+                  <div
+                    class="relative bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-space-md flex flex-col items-center justify-center my-space-xs"
+                  >
+                    <div
+                      class="w-40 h-40 overflow-hidden rounded bg-surface-container p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
+                    >
+                      <img
+                        alt="QR Code LinkedIn Camila Rivas"
+                        class="w-full h-full object-contain"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1Xt50TvOLULTy--K0A_G-7PgKL1MyPJI5DdJCakpxZsCUcAddNEdumiHY22T0TNaVF7xjabnjOoX1BGTnKwsnIFXH1LjlXEdFmhlhg29wALEz-XKSb1fw36xA2K8bLLbrQbSfQp_GDoBNyKiDoy1JH_8_0plXURbsFNVC05o95kKDAPuB-l__tH6ndXIyPZzDxHyC48P1SqR5xOkP7EZ5r5572QAkWkr6-Y72tRZuwkO7HkU0YWeBD3Raw"
+                      />
+                    </div>
+                    <span
+                      class="font-code-sm text-code-sm text-on-surface-variant mt-space-sm flex items-center gap-1.5"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px] text-primary"
+                        >qr_code_scanner</span
+                      >
+                      Escanear para conectar en LinkedIn
+                    </span>
+                  </div>
+                </div>
+                <!-- Card Footer -->
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/30 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-on-surface-variant"
+                    >@crivas-cloud</span
+                  >
+                  <div class="flex items-center gap-1.5">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >Laravel</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >MySQL</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >DevOps</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Member 3 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/50 hover:border-primary/40 transition-all rounded-xl p-space-lg flex flex-col justify-between group"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Card Header -->
+                  <div class="flex items-start justify-between">
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors"
+                      >
+                        Leonardo Flores
+                      </h3>
+                      <span
+                        class="font-code-md text-code-md text-tertiary font-medium"
+                        >AI &amp; Fullstack Engineer</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                        >Gemini AI Integration &amp; Firebase</span
+                      >
+                    </div>
+                    <div
+                      class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface-variant"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >smart_toy</span
+                      >
+                    </div>
+                  </div>
+                  <!-- QR Code Placeholder Frame -->
+                  <div
+                    class="relative bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-space-md flex flex-col items-center justify-center my-space-xs"
+                  >
+                    <div
+                      class="w-40 h-40 overflow-hidden rounded bg-surface-container p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
+                    >
+                      <img
+                        alt="QR Code LinkedIn Mateo Ortiz"
+                        class="w-full h-full object-contain"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1Xt50TvOLULTy--K0A_G-7PgKL1MyPJI5DdJCakpxZsCUcAddNEdumiHY22T0TNaVF7xjabnjOoX1BGTnKwsnIFXH1LjlXEdFmhlhg29wALEz-XKSb1fw36xA2K8bLLbrQbSfQp_GDoBNyKiDoy1JH_8_0plXURbsFNVC05o95kKDAPuB-l__tH6ndXIyPZzDxHyC48P1SqR5xOkP7EZ5r5572QAkWkr6-Y72tRZuwkO7HkU0YWeBD3Raw"
+                      />
+                    </div>
+                    <span
+                      class="font-code-sm text-code-sm text-on-surface-variant mt-space-sm flex items-center gap-1.5"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px] text-primary"
+                        >qr_code_scanner</span
+                      >
+                      Escanear para conectar en LinkedIn
+                    </span>
+                  </div>
+                </div>
+                <!-- Card Footer -->
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/30 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-on-surface-variant"
+                    >@mortiz-ai</span
+                  >
+                  <div class="flex items-center gap-1.5">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >Gemini AI</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >Firestore</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >Python</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Member 4 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/50 hover:border-primary/40 transition-all rounded-xl p-space-lg flex flex-col justify-between group"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Card Header -->
+                  <div class="flex items-start justify-between">
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors"
+                      >
+                        André Preza
+                      </h3>
+                      <span
+                        class="font-code-md text-code-md text-secondary font-medium"
+                        >Frontend &amp; Mobile Lead</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                        >React Native &amp; UI/UX Systems</span
+                      >
+                    </div>
+                    <div
+                      class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface-variant"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >terminal</span
+                      >
+                    </div>
+                  </div>
+                  <!-- QR Code Placeholder Frame -->
+                  <div
+                    class="relative bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-space-md flex flex-col items-center justify-center my-space-xs"
+                  >
+                    <div
+                      class="w-40 h-40 overflow-hidden rounded bg-surface-container p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
+                    >
+                      <img
+                        alt="QR Code LinkedIn Alejandro Silva"
+                        class="w-full h-full object-contain"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1Xt50TvOLULTy--K0A_G-7PgKL1MyPJI5DdJCakpxZsCUcAddNEdumiHY22T0TNaVF7xjabnjOoX1BGTnKwsnIFXH1LjlXEdFmhlhg29wALEz-XKSb1fw36xA2K8bLLbrQbSfQp_GDoBNyKiDoy1JH_8_0plXURbsFNVC05o95kKDAPuB-l__tH6ndXIyPZzDxHyC48P1SqR5xOkP7EZ5r5572QAkWkr6-Y72tRZuwkO7HkU0YWeBD3Raw"
+                      />
+                    </div>
+                    <span
+                      class="font-code-sm text-code-sm text-on-surface-variant mt-space-sm flex items-center gap-1.5"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px] text-primary"
+                        >qr_code_scanner</span
+                      >
+                      Escanear para conectar en LinkedIn
+                    </span>
+                  </div>
+                </div>
+                <!-- Card Footer -->
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/30 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-on-surface-variant"
+                    >@asilva-dev</span
+                  >
+                  <div class="flex items-center gap-1.5">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >React Native</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >Tailwind</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Member 5 -->
+              <div
+                class="bg-surface-container-low border border-outline-variant/50 hover:border-primary/40 transition-all rounded-xl p-space-lg flex flex-col justify-between group"
+              >
+                <div class="flex flex-col gap-space-md">
+                  <!-- Card Header -->
+                  <div class="flex items-start justify-between">
+                    <div class="flex flex-col">
+                      <h3
+                        class="font-headline-sm text-headline-sm font-bold text-on-surface group-hover:text-primary transition-colors"
+                      >
+                        Joaquín Morán
+                      </h3>
+                      <span
+                        class="font-code-md text-code-md text-secondary font-medium"
+                        >Frontend &amp; Mobile Lead</span
+                      >
+                      <span
+                        class="font-body-sm text-body-sm text-on-surface-variant mt-0.5"
+                        >React Native &amp; UI/UX Systems</span
+                      >
+                    </div>
+                    <div
+                      class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-on-surface-variant"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >terminal</span
+                      >
+                    </div>
+                  </div>
+                  <!-- QR Code Placeholder Frame -->
+                  <div
+                    class="relative bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-space-md flex flex-col items-center justify-center my-space-xs"
+                  >
+                    <div
+                      class="w-40 h-40 overflow-hidden rounded bg-surface-container p-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
+                    >
+                      <img
+                        alt="QR Code LinkedIn Alejandro Silva"
+                        class="w-full h-full object-contain"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1Xt50TvOLULTy--K0A_G-7PgKL1MyPJI5DdJCakpxZsCUcAddNEdumiHY22T0TNaVF7xjabnjOoX1BGTnKwsnIFXH1LjlXEdFmhlhg29wALEz-XKSb1fw36xA2K8bLLbrQbSfQp_GDoBNyKiDoy1JH_8_0plXURbsFNVC05o95kKDAPuB-l__tH6ndXIyPZzDxHyC48P1SqR5xOkP7EZ5r5572QAkWkr6-Y72tRZuwkO7HkU0YWeBD3Raw"
+                      />
+                    </div>
+                    <span
+                      class="font-code-sm text-code-sm text-on-surface-variant mt-space-sm flex items-center gap-1.5"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px] text-primary"
+                        >qr_code_scanner</span
+                      >
+                      Escanear para conectar en LinkedIn
+                    </span>
+                  </div>
+                </div>
+                <!-- Card Footer -->
+                <div
+                  class="pt-space-md mt-space-md border-t border-outline-variant/30 flex items-center justify-between"
+                >
+                  <span
+                    class="font-code-sm text-code-sm text-on-surface-variant"
+                    >@asilva-dev</span
+                  >
+                  <div class="flex items-center gap-1.5">
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >React Native</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded"
+                      >Tailwind</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CALL TO ACTION BANNER / DOWNLOAD BLOCK -->
+        <section
+          class="w-full px-margin py-space-xl lg:py-24 bg-surface"
+          id="descargar"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="relative overflow-hidden rounded-2xl bg-gradient-to-b from-surface-container-low to-surface-container-lowest border border-primary/30 p-space-xl lg:p-16 shadow-2xl"
+            >
+              <!-- Background decorative ambient circles -->
+              <div
+                class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"
+              ></div>
+              <div
+                class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-secondary/10 blur-3xl pointer-events-none"
+              ></div>
+              <div
+                class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-center"
+              >
+                <div
+                  class="lg:col-span-8 flex flex-col items-start gap-space-md"
+                >
+                  <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 font-code-sm text-code-sm text-primary"
+                  >
+                    <span class="material-symbols-outlined text-[16px]"
+                      >install_mobile</span
+                    >
+                    <span>SOLO PARA JUECES</span>
+                  </div>
+                  <h2
+                    class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-on-surface tracking-tight leading-tight"
+                  >
+                    Califica nuestro proyectro
+                  </h2>
+                  <p
+                    class="font-body-lg text-body-lg text-on-surface-variant max-w-xl"
+                  >
+                    Llena esta encuesta para calificar nuestra propuesta,
+                    ¡agradecemos tu opinion y tu feedback como profesional!
+                  </p>
+                  <!-- Store download buttons -->
+                  <div
+                    class="flex flex-wrap items-center gap-space-md pt-space-xs w-full sm:w-auto"
+                  >
+                    <!-- App Store Button -->
+                    <a
+                      class="inline-flex items-center gap-3 bg-surface-container-highest hover:bg-surface-bright border border-outline-variant/60 text-on-surface px-space-lg py-3 rounded-xl transition-all"
+                      href="https://github.com/MadeInRodri/learning-app"
+                      target="_blank"
+                    >
+                      <span class="material-symbols-outlined text-[28px]"
+                        >phone_iphone</span
+                      >
+                      <div class="flex flex-col text-left">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant leading-none uppercase"
+                          >Revisa nuestro</span
+                        >
+                        <span
+                          class="font-headline-sm text-[16px] font-semibold text-on-surface leading-tight"
+                          >Frontend</span
+                        >
+                      </div>
+                    </a>
+                    <!-- Google Play Button -->
+                    <a
+                      class="inline-flex items-center gap-3 bg-surface-container-highest hover:bg-surface-bright border border-outline-variant/60 text-on-surface px-space-lg py-3 rounded-xl transition-all"
+                      href="https://github.com/Bryndroid/backend-dps"
+                      target="_blank"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[28px] text-primary"
+                        >shop</span
+                      >
+                      <div class="flex flex-col text-left">
+                        <span
+                          class="font-label-sm text-[10px] text-on-surface-variant leading-none uppercase"
+                          >Revisa nuestro</span
+                        >
+                        <span
+                          class="font-headline-sm text-[16px] font-semibold text-on-surface leading-tight"
+                          >Backend</span
+                        >
+                      </div>
+                    </a>
+                  </div>
+                  <!-- Security badge -->
+                  <div
+                    class="flex items-center gap-4 text-on-surface-variant font-code-sm text-code-sm pt-space-xs"
+                  >
+                    <span class="flex items-center gap-1.5">
+                      <span
+                        class="material-symbols-outlined text-[16px] text-primary"
+                        >lock</span
+                      >
+                      Queremos saber tu opinion
+                    </span>
+                    <span class="text-outline">•</span>
+                    <span>Aplicación en fase Beta</span>
+                  </div>
+                </div>
+                <!-- Right side: Mini Scan Card -->
+                <div
+                  class="lg:col-span-4 flex flex-col items-center justify-center"
+                >
+                  <div
+                    class="bg-surface-container border border-outline-variant/50 rounded-xl p-space-lg flex flex-col items-center gap-space-sm text-center shadow-lg"
+                  >
+                    <span
+                      class="font-headline-sm text-headline-sm font-semibold text-on-surface"
+                      >Escaneo Rápido</span
+                    >
+                    <div
+                      class="w-36 h-36 bg-surface-container-lowest p-2 rounded-lg border border-outline-variant/30 flex items-center justify-center"
+                    >
+                      <img
+                        alt="Calificación QR"
+                        class="w-full h-full object-contain"
+                        src="./src/assets/encuesta.png"
+                      />
+                    </div>
+                    <span
+                      class="font-code-sm text-code-sm text-on-surface-variant"
+                      >Apunta con la cámara de tu móvil para acceder a la
+                      encuesta de calificación</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-container-lowest border-t border-outline-variant/30 py-space-xl px-margin"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"
+      >
+        <div
+          class="flex flex-col sm:flex-row items-center gap-space-sm text-center sm:text-left"
+        >
+          <span>© 2025 Code Inventors. Todos los derechos reservados.</span
+          ><span class="hidden sm:inline text-outline">|</span
+          ><a
+            class="hover:text-primary transition-colors font-code-sm text-code-sm"
+            href="mailto:contacto@codeinventors.dev"
+            >contacto@codeinventors.dev</a
+          >
+        </div>
+        <div class="flex items-center gap-gutter">
+          <a
+            target="_blank"
+            class="hover:text-primary transition-colors"
+            href="https://github.com/MadeInRodri/learning-app"
+            >Repositorio GitHub</a
+          ><a
+            target="_blank"
+            class="hover:text-primary transition-colors"
+            href="https://github.com/Bryndroid/backend-dps"
+            >Documentación API</a
+          >
+          <div
+            class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-lg border border-outline-variant/50 bg-surface-container-high/40 text-secondary font-label-sm text-label-sm"
+          >
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span
+            ><span>Potenciado por Gemini AI</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
